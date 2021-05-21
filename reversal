@@ -1,0 +1,8 @@
+# Python-
+#Given a string s,reverse it without reversing its individual words.Words are seperated by dots.
+s="i.like.this.program"
+words=s.split(".")
+string=[]
+for i in words:
+	string.insert(0,i)
+print(".".join(string))
