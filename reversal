@@ -6,3 +6,4 @@ string=[]
 for i in words:
 	string.insert(0,i)
 print(".".join(string))
+#output program.this.like.i
