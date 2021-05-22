@@ -1,0 +1,36 @@
+#There are 3 integers k,m,n.you have to convert the number k to m by performing the given operations.--multiply k by n,decrease k by 2,decrease k by 1.find the minimum steps.
+def mul(k,n):
+  x=k*n
+def dec2(k):
+  k=k-2
+def dec1(k):
+  k=k-1    
+T=int(input("number of test cases"))
+i=1
+count=0
+while(i<=T):
+  k,m,n=int(input()),int(input()),int(input())
+  while(True):
+    if(k<m):
+      while(True):
+        mul(k,n)
+        count=count+1
+        if(k>m):
+          break
+      if((k-2)>=m):
+        dec2(k)
+        count=count+1
+      else:    
+        dec1(k)
+        count=count+1
+    if(k>m):
+      if((k-2)>=m):
+        dec2(k)
+        count=count+1
+      else:
+         dec1(k)
+         count=count+1
+    if(k==m):
+       break    
+print (count)
+i=i+1
