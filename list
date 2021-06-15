@@ -1,0 +1,15 @@
+#values inserting to list from user
+l=[]
+For I in range(10):
+  y=input()
+  l.append(y)
+print(l)
+
+#vowel or consonent
+list=["a","e","i","o","u","A","E","I","O","U"]
+print(list)
+x=input()
+if x in list:
+  print("vowel")
+else:
+  print("consonent")
