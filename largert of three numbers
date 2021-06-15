@@ -1,0 +1,14 @@
+a=int(input("EnterA:"))
+b=int(input("EnterB:"))
+c=int(input("EnterC:"))
+ifa>b:
+  ifa>c:
+    g=a
+  else:
+    g=c
+else:
+  ifb>c:
+    g=b
+  else:
+    g=c
+print("Greater=",g)
