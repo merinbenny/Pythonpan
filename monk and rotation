@@ -1,0 +1,17 @@
+#Monk loves to preform different operations on arrays, and so being the principal of Hackerearth School, he assigned a task to his new student Mishki. Mishki will be provided with an integer array A of size N and an integer K , where she needs to rotate the array in the right direction by K steps and then print the resultant array. As she is new to the school, please help her to complete the task.
+
+def array(N):
+    a=[]
+    for i in range(N):
+        e = int(input("element"))
+        a.append(e)
+    return a
+T=int(input())
+while(T>0):
+    a = []
+    N = int(input())
+    K = int(input())
+    a=array(N)
+    aa=(a[len(a)-K:len(a)]+a[0:len(a)-K])
+    T=T-1
+print(aa)
