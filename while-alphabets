@@ -1,0 +1,12 @@
+#.Write a  program to print all alphabets from a to z.
+list=[]
+i=0
+while(i<6):
+    a=input()
+    list.append(a)
+    i=i+1
+print(list)
+x=0
+while(x<(len(list))):
+    print(list[x])
+    x+=1
