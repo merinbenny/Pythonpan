@@ -1,0 +1,8 @@
+# Find sum of first n natural numbers
+i=0
+sum=0
+limit=int(input("enter limit:"))
+while(i<=limit):
+    sum=sum+i
+    i+=1
+print(sum)
