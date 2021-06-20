@@ -1,0 +1,6 @@
+list=[]
+num=int(input("limit"))
+for i in range(num):
+    a=int(input("enter"))
+    list.append(a)
+print(list)
