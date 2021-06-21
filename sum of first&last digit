@@ -1,0 +1,9 @@
+#program to print first and last digits of a number.
+number=int(input("ENTER A NUMBER:"))
+last=number%10
+print("last digit:",last)
+while(number>=10):
+    number=number//10
+print("First digit:",number)
+sum=last+number
+print("Sum of first & last digit:",sum)
