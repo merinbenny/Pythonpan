@@ -1,0 +1,7 @@
+#program to count number of digits in a number
+number=int(input("ENTER A NUMBER:"))
+count=0
+while(number>0):
+    number=number//10
+    count+=1
+print("Count of digits:",count)
