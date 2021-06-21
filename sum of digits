@@ -1,0 +1,8 @@
+#program to calculate sum of digits of a number
+number=int(input("ENTER A NUMBER:"))
+sum=0
+while(number>0):
+    digit=number%10
+    sum=sum+digit
+    number=number//10
+print("Sum of digits:",sum)
