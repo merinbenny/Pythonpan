@@ -1,0 +1,15 @@
+#Write a program to print fibonacci series upto a limit
+
+digit = int(input("Enter: "))
+n1, n2 = 0, 1
+count = 0
+if digit <= 0:
+   print("Enter a positive integer")
+else:
+   print("Fibonacci sequence upto",digit,":")
+   while count < digit:
+       print(n1)
+       term = n1 + n2
+       n1 = n2
+       n2 = term
+       count +=1
