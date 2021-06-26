@@ -1,0 +1,35 @@
+#Take 20 integer inputs from user and print the following:
+number of positive numbers
+number of negative numbers
+number of odd numbers
+number of even numbers
+number of 0s.
+
+
+list = []
+for i in range(5):
+    a = int(input("enter:"))
+    list.append(a)
+print(list)
+positive=0
+negative=0
+zero=0
+even=0
+odd=0
+for i in range(5):
+    if (list[i]>0):
+        positive+=1
+    elif(list[i]==0):
+        zero+=1
+    else:
+        negative+=1
+for i in range(5):
+    if ((list[i] % 2) == 0):
+        even += 1
+    else:
+        odd += 1
+print("Number of Positive numbers:",positive)
+print("Number of Negative numbers:",negative)
+print("Number of Zeros:",zero)
+print("Number of even numbers:",even)
+print("Number of odd numbers:",odd)
