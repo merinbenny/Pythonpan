@@ -1,0 +1,32 @@
+numbers = [1, 3, 4, 2]
+
+# Sorting list of Integers in ascending
+numbers.sort()
+
+print(numbers)
+
+
+#binary search
+def binarySearch(list, l, r, x):
+
+    if r >= l:
+        mid = l + (r - l) // 2
+        if list[mid] == x:
+            return mid
+        elif list[mid] > x:
+            return binarySearch(list, l, mid - 1, x)
+
+        else:
+            return binarySearch(list, mid + 1, r, x)
+
+    else:
+
+        return -1
+list = [2, 3, 4, 10, 40]
+x = int(input("Enter an element to search:"))
+result = binarySearch(list, 0, len(list) - 1, x)
+
+if result != -1:
+    print("Element is present at index ",result)
+else:
+    print("Element is not present in array")
