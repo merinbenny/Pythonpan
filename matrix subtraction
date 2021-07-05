@@ -1,0 +1,45 @@
+A=[]
+n=int(input("Enter N for N x N matrix : "))
+
+print("Enter the element:")
+for i in range(n):#rows
+    row=[]
+    for j in range(n):#col
+        row.append(int(input()))                #add the input to row list
+    A.append(row)                               #add the row to the list
+print(A)
+
+#Display the 2D array
+print("Display Array In Matrix Form")
+for i in range(n):
+   for j in range(n):
+      print(A[i][j], end=" ")                  #new line
+   print()
+B=[]
+n=int(input("Enter N for N x N matrix : "))
+
+print("Enter the element :")
+for i in range(n):
+   row=[]
+   for j in range(n):
+      row.append(int(input()))
+   B.append(row)
+print(B)
+
+print("Display Array In Matrix Form")
+for i in range(n):
+   for j in range(n):
+      print(B[i][j], end=" ")
+   print()
+   result = [[0,0,0], [0,0,0], [0,0,0]]
+# iterate through rows
+for i in range(n):
+# iterate through columns
+    for j in range(len(A[0])):
+
+        result[i][j] = A[i][j] - B[i][j]
+print("Resultant Matrix is :")
+for i in range(n):
+    for j in range(n):
+        print(result[i][j],end=" ")
+    print()
