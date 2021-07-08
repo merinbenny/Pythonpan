@@ -1,0 +1,27 @@
+#Write a program to read numbers from  a file and write even,odd and prime numbers to seperate file.
+
+f=open("demo","r")
+f1=open("new","a")
+f2=open("myfile","a")
+f3=open("prime","a")
+for line in f:
+    n=int(line)
+    if(n%2==0):
+        n=str(n)+'\n'
+        f1.write(n)
+    else:
+        n=str(n)+'\n'
+        f2.write(n)
+    flag=0
+    n=int(n)
+    for j in range(2,n):
+        if (n%j==0):
+            flag=1
+    if(flag==0):
+        n=str(n)+"\n"
+        f3.write(n)
+
+f.close()
+f1.close()
+f2.close()
+f3.close()
