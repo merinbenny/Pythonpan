@@ -10,10 +10,10 @@ import math, random
 def send_sms(X):
     actual_msg = 'Hi, Your OTP :'+X
     mob = "**********"
-    account_sid = "AC43ecc8463ba23482924efc395ad7718e"
-    auth_token = "0fb80483cbe5d2d6cb9ac63c71ecee5d"
+    account_sid = "*****************************"
+    auth_token = "******************************"
     client = Client(account_sid, auth_token)
-    message = client.messages.create(body=actual_msg, from_="+13523205747", to="=+91{}".format(mob))
+    message = client.messages.create(body=actual_msg, from_="*************", to="=+91{}".format(mob))
 
 
 def open_balance():
