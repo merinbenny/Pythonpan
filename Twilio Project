@@ -1,0 +1,86 @@
+#CREATE NECESSORY FILES
+#CREATE AN ACCOUNT IN TWILIO
+#PROVIDE YOUR CREDINTIALS IN THE CODE.
+
+
+from twilio.rest import Client
+import math, random
+
+
+def send_sms(X):
+    actual_msg = 'Hi, Your OTP :'+X
+    mob = "**********"
+    account_sid = "AC43ecc8463ba23482924efc395ad7718e"
+    auth_token = "0fb80483cbe5d2d6cb9ac63c71ecee5d"
+    client = Client(account_sid, auth_token)
+    message = client.messages.create(body=actual_msg, from_="+13523205747", to="=+91{}".format(mob))
+
+
+def open_balance():
+    b = open("balance", "r")
+    amount = b.readline()
+    amount = int(amount)
+    b.close()
+    return amount
+
+
+def OTP():
+    digit = "0123456789"
+    otp = ""
+    for i in range(4):
+        otp += digit[math.floor(random.random() * 10)]
+    return otp
+
+
+print("\t\t BANK")
+while (True):
+    op = int(input("1)balance enquiry\n2)deposit\n3)withdrawal\n4)exit\nenter your choice"))
+    if op == 1:
+        sys_otp = OTP()
+        send_sms(sys_otp)
+        usr_otp = input("\nenter OTP:")
+        if usr_otp == sys_otp:
+            balance = open_balance()
+            print("\n your available balace is:", balance)
+        else:
+            print("\n invalid OTP")
+    elif op == 2:
+        sys_otp = OTP()
+        send_sms(sys_otp)
+        usr_otp = input("\nenter OTP:")
+        if usr_otp == sys_otp:
+            deposit = int(input("\n enter amount to be deposited"))
+            balance = open_balance()
+            balance += deposit
+            d = open("deposit", "a")
+            d.write(str(deposit) + "\n")
+            d.close()
+            b = open("balance", "w")
+            b.write(str(balance))
+            b.close()
+            print("\n amount credited\n")
+    elif op == 3:
+        sys_otp = OTP()
+        send_sms(sys_otp)
+        usr_otp = input("\nenter otp:")
+        if usr_otp == sys_otp:
+            withdraw = int(input("\n enter amount to withdraw:"))
+            balance = open_balance()
+            if withdraw > balance:
+                print("\n insufficient balance\n")
+            else:
+                balance -= withdraw
+                w = open("withdraw", "a")
+                w.write(str(withdraw) + "\n")
+                w.close()
+                b = open("balance", "w")
+                b.write(str(balance))
+                b.close()
+                print("\n amount debited")
+        else:
+            print("\n invalid otp")
+    elif op == 4:
+        print("\nThank you!")
+        break
+    else:
+        print("\ninvalid option. try again")
