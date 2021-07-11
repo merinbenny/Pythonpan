@@ -1,0 +1,37 @@
+
+
+
+import requests
+import time
+#from playsound import playsound
+dist = 306
+date = '11-07-2021'
+URL = 'https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id={}&date={}'.format(
+    dist, date)
+
+header = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36'}
+
+
+def findAvailability():
+    counter = 0
+    result = requests.get(URL, headers=header)
+    response_json = result.json()
+    data = response_json["sessions"]
+    for each in data:
+        if((each["available_capacity"] > 0) & (each["min_age_limit"] >= 45)):
+            counter += 1
+            print(each["name"])
+            print(each["pincode"])
+            print(each["vaccine"])
+            print(each["available_capacity"])
+            #playsound('C:/Users/USER/Downloads/ding-sound.mp3')
+            return True
+    if(counter == 0):
+        print("No Available Slots")
+        return False
+
+
+while(findAvailability() != True):
+    time.sleep(5)
+    findAvailability()
