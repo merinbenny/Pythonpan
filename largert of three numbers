@@ -1,14 +1,13 @@
-a=int(input("EnterA:"))
-b=int(input("EnterB:"))
-c=int(input("EnterC:"))
-ifa>b:
-  ifa>c:
-    g=a
-  else:
-    g=c
+a=int(input("Enter number1:"))
+b=int(input("Enter number2:"))
+c=int(input("Enter number3:"))
+if(a>b):
+    if(a>c):
+        print(a,"is greater")
+    else:
+        print(c,"is greater")
 else:
-  ifb>c:
-    g=b
-  else:
-    g=c
-print("Greater=",g)
+    if(b>c):
+        print(b,"is greater")
+    else:
+        print(c,"is greater")
