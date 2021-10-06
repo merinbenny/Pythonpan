@@ -1,12 +1,13 @@
-#.Write a  program to print all alphabets from a to z.
 list=[]
+limit=int(input("enter the limit:"))
 i=0
-while(i<6):
-    a=input()
+while(i<limit):
+    a=input("enter:")
     list.append(a)
+    print(list)
     i=i+1
 print(list)
 x=0
-while(x<(len(list))):
+while(x<(limit)):
     print(list[x])
     x+=1
