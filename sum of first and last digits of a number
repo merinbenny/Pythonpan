@@ -1,0 +1,12 @@
+# take input of number
+n = int(input("Enter any number : "))
+
+# convert number into string
+number = str(n)
+# convert first and last characters into integer digits
+first = int(number[0])
+last = int(number[-1])
+
+sum = first + last
+
+print("sum of ",first, "and", last, "is : ",sum)
